@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Alert;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -27,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/registrace';
 
     /**
      * Create a new controller instance.
@@ -42,8 +43,9 @@ class RegisterController extends Controller
     
     public function index()
     {
-        
-        return view("auth.register");
+
+
+        return view("auth.register", ['alert' => Alert::getData()]);
     }
     /**
      * Get a validator for an incoming registration request.
@@ -53,12 +55,25 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
+        $validator = Validator::make($data, [
             'name' => 'required|max:255',
             'surname' => 'max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
         ]);
+        
+        if ($validator->fails())
+        {
+            //$alert = Alert::setType("coze");
+                
+            $this->alert = array(
+                'type' => 'danger',
+                'title' => 'Ups!',
+                'text' => 'Opravte prosím tyto pole: '
+            );
+        }
+                
+        return $validator;
     }
 
     /**
@@ -69,7 +84,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        dd("hh");
+        
         return User::create([
             'name' => $data['name'],
             'surname' => $data['surname'],

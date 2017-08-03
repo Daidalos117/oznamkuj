@@ -5,7 +5,7 @@
         </div>
         <div class="col-xs-6 header-right">
             <ul class="menu">
-                <li>Přihlásit</li>
+                <li><button data-toggle="modal" data-target="#loginModal" class="btn" type="button">Přihlásit</button></li>
             </ul>
         </div>
     </div>

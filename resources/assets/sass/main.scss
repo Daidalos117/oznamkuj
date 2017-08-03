@@ -1,5 +1,6 @@
 html {
   font-size: 14px;
+  height: 100%;
 }
 
 body, html {
@@ -9,7 +10,8 @@ body, html {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
-  min-height: 100vh;
+ position: relative;
+ min-height: 100%;
 }
 
 .container {

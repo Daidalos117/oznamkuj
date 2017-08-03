@@ -1,11 +1,14 @@
 footer.footer {
+
   padding: .7rem;
   text-align: center;
   background-color: darken($primary-color-dark, 20%);
   color: white;
-
+  margin-top: 5rem;
   bottom: 0;
   width: 100%;
   @include flexbox();
-  @include align-self(flex-end);
+  @include align-self(flex-end); 
+  position: absolute;
+  bottom: 0;
 }

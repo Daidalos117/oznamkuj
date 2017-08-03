@@ -20,7 +20,9 @@ $family-primary: $font-family;
 
 
 //components
-//@import "components/btn";
+@import "components/btn";
 @import "components/header";
+@import "components/info-bar";
 @import "components/footer";
 @import "components/schools";
+@import "components/loginModal";

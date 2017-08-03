@@ -17,26 +17,36 @@
 <body>
 
     @include('layouts.menu')
-
-
-
-    @if (empty($noLayout))
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-8">
-                @yield('content')
-            </div>
-            <div class="col-md-4">
-
-            </div>
+    <div class="info-bar">
+        <div class="container">
+            @include('components.alert')
         </div>
+
     </div>
-    @else
-        <div class="container-fluid">
-        @yield('content')
-        </div>
-    @endif
 
+    <div class="main-content">
+    @if (empty($noLayout))
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-xs-12">
+                    @yield('content')
+                </div>
+                <div class="col-md-4">
+
+                </div>
+            </div>
+        </div>
+        @else
+            <div class="container-fluid">
+            @yield('content')
+            </div>
+        @endif
+    </div>
     @include('layouts.footer')
+    @include('components.loginModal')
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+     <!-- Include all compiled plugins (below), or include individual files as needed -->
+     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
