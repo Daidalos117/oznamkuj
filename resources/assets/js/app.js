@@ -5,7 +5,26 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+var $ = require("jquery");
 require('./bootstrap');
+require('jquery-bar-rating');
+
+require('jquery-bar-rating/dist/themes/bars-square.css');
+
+require("components/school-detail.js");
+
+$(function() {
+    //must have for ajax
+    $.ajaxSetup({
+           headers: { 'X-CSRF-Token' : $('meta[name="_token"]').attr('content') }
+       });
+
+    
+    
+
+ 
+ });
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

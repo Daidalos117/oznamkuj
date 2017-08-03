@@ -9,7 +9,7 @@ class Alert
     private $data = null;
     
     const TYPE_ERROR = 'danger', 
-        TYPE_SUCCES = 'succes';
+        TYPE_SUCCES = 'success';
     
     static function setType($type) {
         Session::put("alert", self::getData() +  ['type' => $type]);
@@ -24,10 +24,15 @@ class Alert
     }
     
     static function getData() {
-        if(is_array(Session::get("alert")))
-            return Session::get("alert");
+        $data = Session::get("alert");
+        if(is_array($data))
+            return $data;
         else {
             return [];
         }
+    }
+    
+    static function reset() {
+        Session::put("alert", []);
     }
 }

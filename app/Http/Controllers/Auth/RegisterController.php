@@ -40,12 +40,16 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
     
+    protected function redirectTo() {
+        return "/registrace";
+    }
     
     public function index()
     {
 
-
-        return view("auth.register", ['alert' => Alert::getData()]);
+        $alert = Alert::getData();
+        Alert::reset();
+        return view("auth.register", ['alert' => $alert]);
     }
     /**
      * Get a validator for an incoming registration request.
@@ -64,7 +68,8 @@ class RegisterController extends Controller
         
         if ($validator->fails())
         {
-            //$alert = Alert::setType("coze");
+            Alert::setType(Alert::TYPE_ERROR);
+            Alert::setText("Opravte prosím problémová pole");
                 
             $this->alert = array(
                 'type' => 'danger',
@@ -84,6 +89,9 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        Alert::setType(Alert::TYPE_SUCCES);
+        Alert::setTitle("Registrace proběhla úspěšně.");
+        Alert::setText("Můžete se přihlásit.");
         
         return User::create([
             'name' => $data['name'],

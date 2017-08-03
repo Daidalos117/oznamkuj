@@ -27,7 +27,7 @@
                             <label for="name" class="col-md-4 control-label">Přijmení</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="surname" value="{{ old('surname') }}" required>
+                                <input id="surname" type="text" class="form-control" name="surname" value="{{ old('surname') }}" required>
 
                                 @if ($errors->has('surname'))
                                     <span class="help-block">

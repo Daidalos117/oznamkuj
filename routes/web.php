@@ -12,8 +12,7 @@
 */
 
 Route::get('/', function () {
-    $schools = \App\Skola::all();
-    return view('welcome', ['schools' => $schools, 'noLayout' => 1]);
+    return view('welcome', [ 'noLayout' => 1]);
 });
 
 Auth::routes();
@@ -28,8 +27,13 @@ Route::get('/skoly/{skola}', 'SchoolsController@show');
 /** Comments */
 Route::post('/komentare', 'CommentsController@store');
 
+Route::post('/hodnoceni', 'RatingController@store');
+
 /** Search */
 Route::get('/hledat', 'SearchController@index');
 
-/** Register */
-Route::get('/registrace', 'Auth\RegisterController@index');
+/** Auth */
+Route::get('/registrace',[ 'as' => 'registerPage', 'uses' => 'Auth\RegisterController@index']);
+Route::get('/odhlaseni',  'Auth\LoginController@logout');
+
+//ajax

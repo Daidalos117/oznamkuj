@@ -1,3 +1,4 @@
+
 @if(!empty($alert))
 <div class="alert alert-{{$alert['type']}} alert-dismissible show" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -8,6 +9,7 @@
     @endif
     
     {{ $alert['text'] }}
+    
 </div>
 @endif
 

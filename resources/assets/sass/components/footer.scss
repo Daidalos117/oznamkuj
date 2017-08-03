@@ -11,4 +11,8 @@ footer.footer {
   @include align-self(flex-end); 
   position: absolute;
   bottom: 0;
+  
+  p {
+      width: 100%;
+  }
 }

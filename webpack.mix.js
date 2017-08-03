@@ -11,5 +11,15 @@ const { mix } = require('laravel-mix');
  |
  */
 
+ mix.copy(
+      '/node_modules/jquery-bar-rating/dist/themes/bars-square.css"',
+      'resources/assets/sass/third'
+ );
+ mix.copy('bower_components/fontawesome/fonts', 'public/assets/fonts')
+
 mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css');
+
+mix.browserSync({
+   proxy: 'localhost/www/oznamkuj/public'
+});

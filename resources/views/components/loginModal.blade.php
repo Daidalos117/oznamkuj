@@ -1,4 +1,4 @@
-<div id="loginModal" class="modal fade loginModal" role="dialog">
+<div id="loginModal" class="modal fade login-modal" role="dialog">
   <div class="modal-dialog modal-sm">
 
     <!-- Modal content-->
@@ -51,10 +51,14 @@
 
               <div class="form-group">
                   <div class="col-xs-12">
-                      <a class="btn btn-link" href="{{ route('password.request') }}">
+                      <a class="" href="{{ route('password.request') }}">
                           Zapomenuté heslo?
                       </a>
-                      <button type="submit" class="btn btn-primary">
+                      <br />
+                      <a class="" href="{{ route('registerPage') }}">
+                          Registrace
+                      </a>
+                      <button type="submit" class="btn btn-primary pull-right">
                           Přihlásit
                       </button>
                   </div>

@@ -12,7 +12,13 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
-
+    <script>
+       // rename myToken as you like
+       window.Laravel =  <?php echo json_encode([
+           'csrfToken' => csrf_token(),
+       ]); ?>
+    </script>
+    <meta name="_token" content="{!! csrf_token() !!}" /> 
 </head>
 <body>
 
@@ -45,7 +51,7 @@
     @include('layouts.footer')
     @include('components.loginModal')
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
      <!-- Include all compiled plugins (below), or include individual files as needed -->
      <script src="{{ asset('js/app.js') }}"></script>
 </body>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Alert;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -46,7 +47,9 @@ class LoginController extends Controller
 	
     protected function redirectTo()
     {
-        return '/path';
+        Alert::setType(Alert::TYPE_SUCCES);
+        Alert::setText("Přihlášení proběhlo úspěšně.");
+        return url()->previous() ;
     }
     
     /**
@@ -58,7 +61,12 @@ class LoginController extends Controller
 	
     public function username()
     {
-        return 'username';
+        return 'email';
     }
     
+    public function getLogout() {
+        Auth::logout();
+        Session::flush();
+        return redirect()->back();
+    }
 }

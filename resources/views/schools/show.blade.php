@@ -1,7 +1,7 @@
 @extends('layouts/layout')
 
 @section('content')
-    <div class="container">
+    <div class="container school-detail">
         <h1>{{$skola->plny_nazev}}</h1>
         <div class="details">
             <table class="detailsTable">
@@ -93,13 +93,20 @@
             @endforeach
         </div>
 
-        <form method="POST" action="{{ URL::to('/') }}/comments">
+        <div class="rating-input">
+            <form method="POST" data-url="{{ URL::to('/hodnoceni') }}" class="js-rating-form">
             {{ csrf_field() }}
-            <select name="score">
+            <select id="rating" class="rating-select js-rating-this">
                 @for($i = 1; $i < 6; $i++)
                     <option value="{{$i}}">{{$i}}</option>
                 @endfor
             </select>
+        </form>
+        </div>
+
+
+        <form method="POST" action="{{ URL::to('/') }}/comments">
+            {{ csrf_field() }}
             <textarea name="comment" required></textarea>
             <input type="submit">
         </form>

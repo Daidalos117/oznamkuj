@@ -10,12 +10,13 @@
   "devDependencies": {
     "axios": "^0.15.3",
     "bootstrap-sass": "^3.3.7",
-    "cross-env": "^3.2.3",
-    "jquery": "^3.1.1",
+    "cross-env": "^5.0.3",
+    "jquery": "^3.2.1",
     "laravel-elixir-browsersync-official": "^1.0.0",
-    "laravel-mix": "^0.8.3",
+    "laravel-mix": "^0.10.0",
     "lodash": "^4.17.4",
-    "vue": "^2.1.10"
+    "vue": "^2.1.10",
+    "webpack": "^2.2.1"
   },
   "name": "oznamkuj",
   "version": "1.0.0",
@@ -23,10 +24,16 @@
   "author": "romanrajchert",
   "license": "MIT",
   "dependencies": {
+    "babel": "^6.23.0",
     "bulma": "^0.4.0",
+    "font-awesome": "^4.7.0",
     "gulp": "^3.9.1",
+    "jquery-bar-rating": "^1.2.2",
     "laravel-elixir": "^6.0.0-15",
     "normalize.css": "^5.0.0",
-    "sass-mediaqueries": "^1.6.1"
+    "path": "^0.12.7",
+    "sass-mediaqueries": "^1.6.1",
+    "webpack": "^3.4.1",
+    "webpack-dev-server": "^2.6.1"
   }
 }
