@@ -1,0 +1,71 @@
+html {
+  font-size: 14px;
+}
+
+body, html {
+  font-family: $font-family;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.container {
+  margin: 0 auto;
+}
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: $font-size-5;
+}
+h2 {
+  font-size: $font-size-2;
+}
+h3 {
+  font-size: $font-size-3;
+}
+
+a, a:visited {
+  color: $primary-color;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+//tablet
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (-webkit-min-device-pixel-ratio: 1) {
+   html {
+    font-size: 15px;
+  }
+}
+
+
+
+/* ----------- Non-Retina Screens ----------- */
+@media screen
+and (min-device-width: 1024px)
+and (max-device-width: 1600px)
+and (-webkit-min-device-pixel-ratio: 1) {
+   html {
+    font-size: 16px;
+  }
+}
+
+/* ----------- Retina Screens ----------- */
+@media screen
+and (min-device-width: 1200px)
+and (max-device-width: 1600px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (min-resolution: 192dpi) {
+}
+
+input {
+  outline: none;
+  font-family: $font-family;
+}

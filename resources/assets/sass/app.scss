@@ -1,0 +1,26 @@
+//variables
+@import "variables";
+
+//bulma
+$family-primary: $font-family;
+//@import "bulma/bulma";
+
+//helpers
+@import "helpers/flexboxgrid.min.scss";
+@import "helpers/flex";
+@import "helpers/normalize";
+
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "bootstrapOveride";
+
+@import "main";
+@import "welcome";
+
+
+
+
+//components
+//@import "components/btn";
+@import "components/header";
+@import "components/footer";
+@import "components/schools";

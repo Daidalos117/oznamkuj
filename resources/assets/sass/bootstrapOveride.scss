@@ -1,0 +1,9 @@
+input {
+    border: none;
+    background: none;
+    &:hover, &:active, &:focus {
+        outline: none;
+    }
+    
+    
+}
