@@ -1,0 +1,15 @@
+@for $i from 0 to 5 {
+  &.color-grade-#{$i} {
+    color: nth($colors-grades, $i+1) !important;
+  }
+}
+@for $i from 0 to 5 {
+  &.bg-grade-#{$i} {
+    background-color: nth($colors-grades, $i+1) !important;
+  }
+}
+@for $i from 0 to 5 {
+  &.border-grade-#{$i} {
+    border-color: nth($colors-grades, $i+1) !important;
+  }
+}

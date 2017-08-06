@@ -5,10 +5,14 @@
 $family-primary: $font-family;
 //@import "bulma/bulma";
 
+//third party scss
+@import 'third/bootstrap-select/bootstrap-select';
+
 //helpers
 @import "helpers/flexboxgrid.min.scss";
 @import "helpers/flex";
 @import "helpers/normalize";
+@import "helpers/mixins";
 
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "bootstrapOveride";
@@ -16,15 +20,25 @@ $family-primary: $font-family;
 @import "main";
 @import "welcome";
 
-
-
-
 //components
 @import "components/btn";
 @import "components/header";
+@import "components/breadcrumbers";
 @import "components/info-bar";
 @import "components/footer";
 @import "components/schools";
 @import "components/school-detail";
 @import "components/login-modal";
 @import "components/main-content";
+@import "components/comments";
+@import "components/filters";
+
+//helper classes
+@import "helpers/classes";
+
+
+$fa-font-path: "../../../node_modules/font-awesome/fonts" !default;
+
+@import 'node_modules/font-awesome/scss/font-awesome.scss';
+
+

@@ -4,6 +4,8 @@ namespace App;
 
 use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
+use App\Rating;
+use App\TypSkola;
 
 class Skola extends Model
 {
@@ -32,7 +34,10 @@ class Skola extends Model
         return $this->hasMany('App\SkolaAdresa', 'skola_id');
     }
     
-    
+    public function rating() {
+        return Rating::schoolRating($this->id);
+    }
+
     /**
      * Get the index name for the model.
      *
@@ -43,6 +48,13 @@ class Skola extends Model
         return 'FullText';
     }
 
+    /**
+     * @return mixed
+     */
+    public function getUrl() {
+       // return $this->id;
+        return $this->url;
+    }
 
     /**
      * Get the indexable data array for the model.
@@ -57,4 +69,27 @@ class Skola extends Model
 
         return $array;
     }
+
+    /**
+     * @param $filters
+     * @return mixaed
+     */
+    static function getSchoolsFilter($filters) {
+        if(isset($filters['types'])) {
+            $schoolIds = TypSkola::select('skola_id')->where('typ_skoly_id', $filters['types'])->groupBy('skola_id')->get();
+            return self::whereIn('id', $schoolIds);
+        }
+
+    }
+
+    public function getTypesNames() {
+        $typy = TypSkola::where('skola_id', $this->id)->get();
+        $names = array();
+        foreach($typy as $typ) {
+            $names[] = $typ->getTypName();
+        }
+        return $names;
+    }
+
+
 }

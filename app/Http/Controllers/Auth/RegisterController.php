@@ -7,7 +7,7 @@ use App\Alert;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-
+use App\Sidebar;
 class RegisterController extends Controller
 {
     /*
@@ -49,7 +49,10 @@ class RegisterController extends Controller
 
         $alert = Alert::getData();
         Alert::reset();
-        return view("auth.register", ['alert' => $alert]);
+        return view("auth.register", ['alert' => $alert,
+            'sidebar' =>    Sidebar::getSidebar(),
+            'breadCumbersTarget' => 'register'
+        ]);
     }
     /**
      * Get a validator for an incoming registration request.
@@ -70,7 +73,8 @@ class RegisterController extends Controller
         {
             Alert::setType(Alert::TYPE_ERROR);
             Alert::setText("Opravte prosím problémová pole");
-                
+
+            //Session::flash('success', 'Gruppe ' . Input::get('display_name') . ' wurde erfolgreich bearbeitet');
             $this->alert = array(
                 'type' => 'danger',
                 'title' => 'Ups!',

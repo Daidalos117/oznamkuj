@@ -2,25 +2,60 @@
 
 namespace App\Http\Controllers;
 
+use App\Sidebar;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use DB;
 use App\Skola;
+use App\Rating;
+use App\Comment;
+use App\TypySkol;
+use Input;
 
 class SchoolsController extends Controller
 {
 
     public function index()
     {
-        $schools = Skola::all();
-        return view("schools.index", ["schools" => $schools]);
+        $input = Input::all();
+        if(!empty($input['_token']) ) {
+
+            $schools = Skola::getSchoolsFilter($input)->paginate(15);
+        } else {
+            $schools = Skola::paginate(15);
+        }
+
+        return view("schools.index", [
+            "schools" => $schools,
+            'filters' => $this->getFilters(),
+            'filtersSelected' => $input,
+            'sidebar' =>    Sidebar::getSidebar(),
+            'breadCumbersTarget' => 'schools'
+        ]);
+    }
+    public function getFilters() {
+        $filter['type'] = TypySkol::all();
+        return $filter;
     }
 
 
-    public function show(Skola $skola)
+    public function show($skolaUrl)
     {
-       // $school = Skola::find($school);
+
+        $skola = Skola::where('url', $skolaUrl)->first();
        //dd($skola->adresy[1]->typJmeno());
-        return view('schools.show', ["skola" => $skola]);
+       //dd(Rating::userRating($skola->id));
+
+        return view('schools.show', [
+            "skola" => $skola,
+            'noSidebar' => 1,
+            'userRating' => Rating::userRating($skola->id),
+            'rating' => Rating::schoolRating($skola->id),
+            'comments' => Comment::schoolComments($skola->id),
+            'breadCumbersTarget' => 'school',
+            'breadCumbersTargetParams' => $skola
+        ]);
     }
+
+
 }

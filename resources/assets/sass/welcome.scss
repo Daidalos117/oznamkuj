@@ -1,34 +1,79 @@
 .welcome {
-  height: 70vh;
+  //height: auto;
+
+  background-color: rgba(white, .3);
+  padding: 2rem 2rem;
+
+  border-radius: .5rem;
   @include flexbox();
-  @include flex-direction(column);
+  @include flex-direction(row);
+//  @include justify-content(flex-start);
 
-  @include justify-content(center);
-
+  flex-wrap: wrap;
+  //height: 40vh;
+  min-height: 30vh;
   &-header {
-    font-size: $font-size-5;
+    //color: white;
+    z-index: 1;
     margin: 0;
   }
+  $size-of-content: 100rem;
   &-paragraph {
-    font-size: $font-size-2;
-    width: 40rem;
+    font-size: $font-size-3;
+    width: 100%;
+    font-weight: 500;
   }
 
   &-search {
-
+    @include flexbox;
+    position: relative;
+    width: 100%;
+    form {
+      width: 100%;
+      @include flexbox;
+    }
     .search-input{
      // border: 1px solid black;
-      padding: 1rem 2rem;
+      @include flex-grow(2);
+      padding: .6rem 2rem;
       background-color: #eee;
-      
-      font-size: $font-size-2;
-      width: 60%;
+      border-radius: 20rem;
+      font-size: $font-size-3;
+      border: 1px solid transparent;
+      //width: 100%;
+      transition: .3s all ease-out;
+      &:focus {
+        border: 1px solid $primary-color-light;
+      }
     }
 
   }
+  .btn-send {
+    position: absolute;
+    right: 0.3rem;
+    top: 0.2rem;
+    width: 4rem;
+    height: 4rem;
 
+  }
   &-links {
     margin-top: .5rem;
   }
 
+}
+.welcome-container {
+  position: relative;
+  overflow: hidden;
+  @include flexbox;
+  @include flex-grow(2);
+  flex-wrap: wrap;
+  @include justify-content(center);
+  flex-direction: column;
+}
+.welcome-image {
+  width: 100%;
+  position: absolute;
+  //display: none;
+  left: 0;
+  top: 0;
 }

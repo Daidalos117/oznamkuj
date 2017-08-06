@@ -1,0 +1,10 @@
+.filters {
+  background-color: $color-grey;
+  padding: 1rem 2rem;
+  .bootstrap-select.filter-select {
+    width: 30rem !important;
+  }
+  input, .filter-select, .bootstrap-select.filter-select {
+    margin-left: 1rem !important;
+  }
+}

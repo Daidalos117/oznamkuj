@@ -1,0 +1,37 @@
+.comment-form {
+    .btn-submit {
+        margin-top: .5rem;
+    }
+}
+
+.comments {
+
+    .comment {
+        @include flexbox;
+        margin: 2rem 0;
+        .comment-avatar-img {
+            border: 3px solid $color-grey;
+        }
+        .comment-body {
+            margin-left: 1.5rem;
+            @include flex-grow(2);
+        }
+        .comment-text {
+            background-color: $color-grey;
+            border-radius: 2rem;
+            padding: .5rem 2rem;
+            margin-top: .4rem;
+        }
+        .name {
+            font-weight: bold;
+            margin: 0;
+            
+        }
+        .created {
+            float: right;
+            color: $secondary-text-color;
+            //font-size: .9rem;
+        }
+    }
+    
+}

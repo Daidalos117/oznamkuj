@@ -7,10 +7,10 @@ $html-font-size-sm: 14px;
 $html-font-size-xs: 13px;
 
 $font-size-1: 1rem;
-$font-size-2: 1.414rem;
-$font-size-3: 1.999rem;
-$font-size-4: 2.827rem;
-$font-size-5: 3.998rem;
+$font-size-2: 1.5rem;
+$font-size-3: 2.25rem;
+$font-size-4: 3.375rem;
+$font-size-5: 5.063rem;
 
 $primary-color-dark:   #1976D2;
 $primary-color:        #2196F3;
@@ -21,3 +21,11 @@ $primary-text-color:   #212121;
 $secondary-text-color: #757575;
 $divider-color:        #BDBDBD;
 $color-grey: #EEEEEE;
+
+$color-grade-0: $color-grey;
+$color-grade-1: #2ecc71;
+$color-grade-2: #f1c40f;
+$color-grade-3: #f39c12;
+$color-grade-4: #d35400;
+$color-grade-5: #c0392b;
+$colors-grades: $color-grade-0 $color-grade-1 $color-grade-2 $color-grade-3 $color-grade-4 $color-grade-5;

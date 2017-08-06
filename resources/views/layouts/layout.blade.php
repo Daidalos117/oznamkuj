@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>Oznámkuj</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -23,29 +23,46 @@
 <body>
 
     @include('layouts.menu')
-    <div class="info-bar">
-        <div class="container">
-            @include('components.alert')
-        </div>
 
-    </div>
 
     <div class="main-content">
     @if (empty($noLayout))
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-xs-12">
-                    @yield('content')
-                </div>
-                <div class="col-md-4">
+         @yield('background')
+            @include('components.breadcumbers')
+        <div class="info-bar">
+            <div class="container">
 
+                @include('components.alert')
+            </div>
+
+        </div>
+        <div class="container">
+            @yield('heading')
+        </div>
+        <div class="content-container ">
+            @yield('filters')
+            <div class="container">
+
+                <div class="row content-container-row">
+                    @if (empty($noSidebar))
+                    <div class="col-md-9 col-xs-12">
+                        @yield('content')
+                    </div>
+                    <div class="col-md-3">
+                        @include('components.sidebar')
+                    </div>
+                    @else
+                    <div class="col-md-12">
+                        @yield('content')
+                    </div>
+                    @endif
                 </div>
             </div>
         </div>
         @else
-            <div class="container-fluid">
+
             @yield('content')
-            </div>
+
         @endif
     </div>
     @include('layouts.footer')

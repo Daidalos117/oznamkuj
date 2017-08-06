@@ -4,7 +4,8 @@
   border-radius: 10rem;
   //background: transparent;
   transition: all .2s ease-in;
-  
+  font-size: $font-size-2;
+
   box-shadow: none;
   &:hover {
     background: black;
@@ -12,7 +13,17 @@
   }
   &:focus, &:active, &:active:focus {
       border: 1px solid transparent;
-      outline: none;
+      outline: none !important;
       box-shadow: none;
   }
+}
+.btn-group, .btn {
+  &:focus, &:active, &:active:focus {
+
+    outline: none !important;
+    box-shadow: none;
+  }
+}
+.bootstrap-select .dropdown-toggle:focus {
+  outline: none !important;
 }

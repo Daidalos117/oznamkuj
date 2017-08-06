@@ -1,5 +1,12 @@
 @extends('layouts/layout')
 
+@section('background')
+    <img src="{{asset('storage/img/register.jpg')}}" alt="background" class="container-background" >
+@stop
+
+@section('heading')
+    <h1 class="content-main-heading accent">Registrace</h1>
+@stop
 @section('content')
 
         <div class="col-xs-12">

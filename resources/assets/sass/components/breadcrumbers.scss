@@ -1,0 +1,10 @@
+.breadcrumbers {
+  background-color: white;
+  z-index: 2;
+  background-color: rgba($color-grey, .7);
+  .breadcrumb {
+    background-color: transparent;
+    margin: 0;
+    border-radius: 0;
+  }
+}

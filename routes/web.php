@@ -27,7 +27,7 @@ Route::get('/skoly/{skola}', 'SchoolsController@show');
 /** Comments */
 Route::post('/komentare', 'CommentsController@store');
 
-Route::post('/hodnoceni', 'RatingController@store');
+Route::post('/hodnoceni', ['middleware' => 'auth', 'uses' => 'RatingController@store']);
 
 /** Search */
 Route::get('/hledat', 'SearchController@index');

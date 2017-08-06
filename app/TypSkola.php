@@ -18,4 +18,8 @@ class TypSkola extends Model
     {
         return $this->hasOne('App\Skola', 'id', 'skola_id');
     }
+
+    public function getTypName() {
+        return $this->typ->typ_jmeno;
+    }
 }

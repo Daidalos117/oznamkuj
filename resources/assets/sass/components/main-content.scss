@@ -1,3 +1,36 @@
 .main-content {
-    margin-bottom: 9rem;
+
+    margin-bottom: 8rem;
+    @include flexbox;
+    @include flex-grow(1);
+    @include flex-direction(column);
+
+    background-color: white;
+}
+.content-container {
+    border: 1px solid $color-grey;
+    border-bottom: none;
+    background-color: white;
+    margin: 5rem 3rem;
+    z-index: 2;
+    @include shadow-1;
+    &-row {
+        margin: 3rem 0;
+    }
+    overflow: hidden;
+}
+.container-background {
+    position: absolute;
+    width: 100%;
+    &.pattern {
+        height: 40%;
+    }
+}
+.content-main-heading {
+    z-index: 2;
+    position: relative;
+    color: white;
+    &.accent {
+        color: $accent-color;
+    }
 }

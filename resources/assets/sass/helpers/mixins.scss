@@ -1,0 +1,28 @@
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content};
+  &:-moz-placeholder           {@content};
+  &::-moz-placeholder          {@content};
+  &:-ms-input-placeholder      {@content};
+}
+
+@mixin shadow-1 {
+  box-shadow:  0px 2px 10px 0px rgba(0,0,0,0.16);
+}
+@mixin shadow-2 {
+  box-shadow: 0px 8px 17px 0px rgba(0,0,0,0.20);
+}
+@mixin transform($values) {
+  -webkit-transform: $values; /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+  -ms-transform: $values; /* IE 9 */
+  transform: $values;
+}
+@mixin after() {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1rem;
+  background-color: red;
+  position: absolute;
+}
+
+

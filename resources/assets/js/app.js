@@ -5,13 +5,20 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+// js includes
 var $ = require("jquery");
 require('./bootstrap');
 require('jquery-bar-rating');
+require('bootstrap-select');
 
+//css includes
 require('jquery-bar-rating/dist/themes/bars-square.css');
+require('jquery-bar-rating/dist/themes/css-stars.css');
 
-require("components/school-detail.js");
+
+//components
+require('./components/rating.js');
+require('./components/filters.js');
 
 $(function() {
     //must have for ajax
@@ -19,7 +26,27 @@ $(function() {
            headers: { 'X-CSRF-Token' : $('meta[name="_token"]').attr('content') }
        });
 
-    
+    $(".js-ajaxify-me").on('submit', function (event) {
+        event.preventDefault();
+        var $this = $(this);
+        var data = $this.serialize();
+        data._token = $this.find('input[name=_token]');
+        $.ajax({
+            type: "POST",
+            url: $this.data("url"),
+            data:data,
+            cache: false,
+            success: function(data) {
+                if($this.data("replace")) {
+                     $($this.data("replace")).html( data.html );
+                }
+            },
+            error: function(data) {
+
+            }
+        })
+    })
+
     
 
  

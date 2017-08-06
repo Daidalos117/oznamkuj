@@ -1,6 +1,25 @@
 .school-detail {
+    .school-heading {
+        margin-bottom: 4rem;
+        
+        
+    }
     .rating-input {
-        margin: 3rem 0;
+        //margin: 3rem 0;
         position: relative;
+    }
+    .rating-score {
+        margin-top: -2.7rem;
+        text-align: right;
+    }
+    .rating-score-text {
+        padding: 1.5rem 2rem;
+        font-size: 7rem;
+        font-weight: bold;
+        border: 1rem solid $color-grey;
+        border-top: none;
+        &:after {
+
+        }
     }
 }

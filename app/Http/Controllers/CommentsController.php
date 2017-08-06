@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Faker\Provider\cs_CZ\DateTime;
 use Illuminate\Http\Request;
 use App\Comment;
-
+use Auth;
 // created with -r parametr
 class CommentsController extends Controller
 {
@@ -38,11 +38,16 @@ class CommentsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-           'comment' => 'required'
+           'comment' => 'required',
+           'school_id' => 'required|numeric'
         ]);
 
-        Comment::create($request->all());
-        return redirect('/');
+        $comment = Comment::create(
+            $request->all()
+            );
+        $comment->user_id = Auth::id();
+        $comment->save();
+        return back();
     }
 
     /**
