@@ -12,11 +12,12 @@ $font-size-3: 2.25rem;
 $font-size-4: 3.375rem;
 $font-size-5: 5.063rem;
 
-$primary-color-dark:   #1976D2;
-$primary-color:        #2196F3;
-$primary-color-light:  #BBDEFB;
+
+$primary-color:        #8971D0;
+$primary-color-dark:   darken($primary-color, 10%);
+$primary-color-light:  lighten($primary-color, 10%);;
 $primary-color-text:   #FFFFFF;
-$accent-color:         #FF4081;
+$accent-color:         #08D9D6;
 $primary-text-color:   #212121;
 $secondary-text-color: #757575;
 $divider-color:        #BDBDBD;

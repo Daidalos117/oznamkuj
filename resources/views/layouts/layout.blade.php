@@ -52,7 +52,7 @@
                         @include('components.sidebar')
                     </div>
                     @else
-                    <div class="col-md-12">
+                    <div class="col-md-12 col-xs-12">
                         @yield('content')
                     </div>
                     @endif

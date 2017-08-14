@@ -1,8 +1,6 @@
 .school-detail {
     .school-heading {
         margin-bottom: 4rem;
-        
-        
     }
     .rating-input {
         //margin: 3rem 0;
@@ -11,6 +9,13 @@
     .rating-score {
         margin-top: -2.7rem;
         text-align: right;
+    }
+    .rating-form {
+        text-align: right;
+        margin-top: 2rem;
+        .br-theme-css-stars .br-widget a {
+            float: right;
+        }
     }
     .rating-score-text {
         padding: 1.5rem 2rem;

@@ -29,7 +29,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Application Debug Mode
+    | Application Debug Moded
     |--------------------------------------------------------------------------
     |
     | When your application is in debug mode, detailed error messages with
@@ -64,7 +64,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Europe/Prague',
 
     /*
     |--------------------------------------------------------------------------
@@ -103,7 +103,8 @@ return [
     |
     */
 
-    'key' => env('APP_KEY'),
+    //'key' => env('APP_KEY'),
+    'key' => 'base64:VtmjcZgjpGMh8TIi+tHet9U9+UKns0wX7yBjRQFoODk=',
 
     'cipher' => 'AES-256-CBC',
 

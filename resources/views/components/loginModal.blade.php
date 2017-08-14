@@ -51,9 +51,6 @@
 
               <div class="form-group">
                   <div class="col-xs-12">
-                      <a class="" href="{{ route('password.request') }}">
-                          Zapomenuté heslo?
-                      </a>
                       <br />
                       <a class="" href="{{ route('registerPage') }}">
                           Registrace

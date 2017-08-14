@@ -15,9 +15,6 @@
 
 @section('content')
 
-
-
-
             <div class="schools">
                 @component('components.school', ['schools' => $schools])
                 @endcomponent

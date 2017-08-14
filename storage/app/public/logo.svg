@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="320px" height="111px" viewBox="0 0 320 111" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="logo" transform="translate(-2.000000, -13.000000)">
+            <g id="Group" transform="translate(24.000000, 17.000000)">
+                <text id="4-" transform="translate(46.356397, 48.883632) rotate(-24.000000) translate(-46.356397, -48.883632) " font-family="Raleway-Bold, Raleway" font-size="64" font-weight="bold" letter-spacing="2.624" fill="#D0021B">
+                    <tspan x="12.3563969" y="71.3836322">4-</tspan>
+                </text>
+                <circle id="Oval" stroke="#8971D0" stroke-width="6" cx="46" cy="58" r="46"></circle>
+            </g>
+            <text id="Oznámkuj" font-family="Raleway-Bold, Raleway" font-size="64" font-weight="bold" letter-spacing="2.62400007" fill="#4A4A4A">
+                <tspan x="0" y="60">Oznámkuj</tspan>
+            </text>
+            <text id="školu" font-family="Raleway" font-size="64" font-weight="normal" letter-spacing="2.624" fill="#4A4A4A">
+                <tspan x="159" y="116">školu</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

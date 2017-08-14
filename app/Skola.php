@@ -57,6 +57,16 @@ class Skola extends Model
     }
 
     /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'url';
+    }
+
+    /**
      * Get the indexable data array for the model.
      *
      * @return array
@@ -79,7 +89,7 @@ class Skola extends Model
             $schoolIds = TypSkola::select('skola_id')->where('typ_skoly_id', $filters['types'])->groupBy('skola_id')->get();
             return self::whereIn('id', $schoolIds);
         }
-
+        return self::all();
     }
 
     public function getTypesNames() {
@@ -88,6 +98,7 @@ class Skola extends Model
         foreach($typy as $typ) {
             $names[] = $typ->getTypName();
         }
+        $names = array_unique($names);
         return $names;
     }
 

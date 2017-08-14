@@ -1,8 +1,12 @@
 .welcome {
   //height: auto;
 
-  background-color: rgba(white, .3);
+
   padding: 2rem 2rem;
+  @media only screen and (max-device-width: 768px)
+  {
+  padding: 2rem 0;
+  }
 
   border-radius: .5rem;
   @include flexbox();
@@ -12,16 +16,40 @@
   flex-wrap: wrap;
   //height: 40vh;
   min-height: 30vh;
+  .welcome-text-content {
+    margin-top: 4rem;
+    //background-color: rgba(black, .3);
+    position: relative;
+    z-index: 2;
+    &:before {
+      @include after;
+      width: 110%;
+      left: -5%;
+      height: 130%;
+      top: -15%;
+      @include shadow-1;
+      background-color: white;
+      border: 1px solid rgba($accent-color, .2);
+      border-radius: .5rem;
+    }
+  }
   &-header {
     //color: white;
+    font-size: 5.5rem;
     z-index: 1;
     margin: 0;
+    @media only screen and (max-device-width: 768px)
+    {
+      font-size: 5rem;
+    }
   }
   $size-of-content: 100rem;
   &-paragraph {
-    font-size: $font-size-3;
+    font-size: 1.8rem;
     width: 100%;
     font-weight: 500;
+    position: relative;
+
   }
 
   &-search {
@@ -34,14 +62,16 @@
     }
     .search-input{
      // border: 1px solid black;
+      position: relative;
       @include flex-grow(2);
-      padding: .6rem 2rem;
+      padding: 1.1rem 2rem;
       background-color: #eee;
       border-radius: 20rem;
-      font-size: $font-size-3;
+      font-size: $font-size-2;
       border: 1px solid transparent;
       //width: 100%;
       transition: .3s all ease-out;
+      //font-weight: 700;
       &:focus {
         border: 1px solid $primary-color-light;
       }
@@ -54,12 +84,16 @@
     top: 0.2rem;
     width: 4rem;
     height: 4rem;
-
+    padding: 0;
   }
   &-links {
     margin-top: .5rem;
+    position: relative;
   }
-
+  &-allSchools {
+    text-decoration: underline;
+    font-size: 1.5rem;
+  }
 }
 .welcome-container {
   position: relative;
@@ -69,11 +103,23 @@
   flex-wrap: wrap;
   @include justify-content(center);
   flex-direction: column;
+  @media only screen and (max-device-width: 768px)
+  {
+    overflow: visible;
+    display: block;
+    margin-bottom: 4rem;
+  }
 }
 .welcome-image {
   width: 100%;
   position: absolute;
   //display: none;
   left: 0;
+  top: 0;
+}
+.welcome-background {
+  height: 100%;
+  width: 100%;
+  position: absolute;
   top: 0;
 }

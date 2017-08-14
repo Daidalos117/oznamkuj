@@ -11,7 +11,7 @@ const { mix } = require('laravel-mix');
  |
  */
 
-
+//pokud zas nejde ak nainstalvoat vsechny zavislosti, mix, webpack a cross-env!
 
 
 mix.js('resources/assets/js/app.js', 'public/js')

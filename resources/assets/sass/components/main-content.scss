@@ -1,6 +1,6 @@
 .main-content {
 
-    margin-bottom: 8rem;
+    margin-bottom: 5rem;
     @include flexbox;
     @include flex-grow(1);
     @include flex-direction(column);
@@ -13,11 +13,17 @@
     background-color: white;
     margin: 5rem 3rem;
     z-index: 2;
+    position: relative;
     @include shadow-1;
     &-row {
         margin: 3rem 0;
     }
     overflow: hidden;
+    @media only screen
+    and (max-device-width: 768px)
+    {
+        margin: 0;
+    }
 }
 .container-background {
     position: absolute;
@@ -25,6 +31,20 @@
     &.pattern {
         height: 40%;
     }
+    -webkit-filter: brightness(.8);
+    filter: brightness(.8);
+    &:after {
+      //  @include after;
+        height: 100%;
+        top: 0;
+        left: 0;
+
+    }
+    @media only screen and (max-device-width: 768px)
+    {
+        height: 20rem;
+    }
+
 }
 .content-main-heading {
     z-index: 2;
@@ -32,5 +52,11 @@
     color: white;
     &.accent {
         color: $accent-color;
+    }
+    &.primary {
+        color: $primary-color;
+    }
+    &.black {
+        color: rgba(black, .6);
     }
 }

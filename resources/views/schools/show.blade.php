@@ -2,19 +2,53 @@
 
 @section('background')
    {{-- <img src="{{asset('storage/img/eli-francis-100644.jpg')}}" alt="background" class="container-background" >--}}
-    <div class="container-background pattern" style="background: url({{asset('storage/pattern/memphis-colorful.png')}})">
+    <div class="container-background pattern" style="background: url({{asset('storage/' . $background)}})">
 
     </div>
 @stop
 
 @section('heading')
-    <h1 class="content-main-heading accent">{{$skola->plny_nazev}}</h1>
+    <h1 class="content-main-heading black">{{$skola->plny_nazev}}</h1>
 @stop
 
 @section('content')
-    <div class="container-fluid school-detail">
+    <div class="container-fluid school-detail mobile-no-padding ">
 
-        <div class="details col-md-8">
+        <div class="col-md-4 col-md-push-8">
+            <div class="rating-score">
+                <span class="rating-score-text border-grade-{{round($rating)}}">
+                    {{$rating}}
+                </span>
+                <!-- add rating -->
+                <div class="rating-input">
+                    <p class="text-muted">
+
+                    <div class="rated-text @if(!$userRating)hidden @endif"><small>Již jste hodnotil.</small></div>
+                    </p>
+                    @if(Auth::user())
+                        <form method="POST" data-url="{{ URL::to('/hodnoceni') }}" class="js-rating-form rating-form">
+                            {{ csrf_field() }}
+
+                            <select id="rating" class="rating-select js-rating-bar" data-rating="@if($userRating){{$userRating->rating}}@else 0 @endif">
+                                <option value=""></option>
+                                @for($i = 1; $i < 6; $i++)
+                                    <option value="{{$i}}">{{$i}}</option>
+                                @endfor
+                            </select>
+                        </form>
+                        <small>Hodnoť jako ve škole.</small>
+                    @else
+                        <div>
+                            <h4>Pro přidání hodnocení se prosím <a data-toggle="modal" data-target="#loginModal" href="javascript:void(0)">přihlašte</a>.</h4>
+                        </div>
+                    @endif
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="details col-md-8 col-md-pull-4 mobile-no-padding">
             <table class="detailsTable table table-striped">
                 <tr>
                     <td>Ředitel</td>
@@ -108,38 +142,7 @@
 
         <input type="hidden" class="js-school-id" value="{{$skola->id}}"/>
 
-        <div class="col-md-4">
-            <div class="rating-score">
-                <span class="rating-score-text border-grade-{{round($rating)}}">
-                    {{$rating}}
-                </span>
-                <!-- add rating -->
-                <div class="rating-input">
-                    <p class="text-muted">
-                              
-                            <div class="rated-text @if(!$userRating)hidden @endif"><small>Již jste hodnotil.</small></div>
-                    </p>
-                    @if(Auth::user())
-                        <form method="POST" data-url="{{ URL::to('/hodnoceni') }}" class="js-rating-form">
-                        {{ csrf_field() }}
-                        
-                        <select id="rating" class="rating-select js-rating-bar" data-rating="@if($userRating){{$userRating->rating}}@else 0 @endif">
-                            <option value=""></option>
-                            @for($i = 1; $i < 6; $i++)
-                                <option value="{{$i}}">{{$i}}</option>
-                            @endfor
-                        </select>
-                        </form>
-                    @else
-                        <div>
-                            <h4>Pro přidání hodnocení se prosím <a data-toggle="modal" data-target="#loginModal" href="javascript:void(0)">přihlašte</a>.</h4>
-                        </div>
-                    @endif
-                </div>
-            </div>
 
-        </div>
-            
             
             
 

@@ -5,7 +5,7 @@
 @stop
 
 @section('heading')
-    <h1 class="content-main-heading accent">Registrace</h1>
+    <h1 class="content-main-heading primary">Registrace</h1>
 @stop
 @section('content')
 

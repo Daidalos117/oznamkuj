@@ -26,6 +26,11 @@ $(function() {
            headers: { 'X-CSRF-Token' : $('meta[name="_token"]').attr('content') }
        });
 
+    $(".js-search-toggle").on("click", function (e) {
+        e.preventDefault();
+        $(".search-bar").toggleClass("shown");
+    });
+
     $(".js-ajaxify-me").on('submit', function (event) {
         event.preventDefault();
         var $this = $(this);
@@ -46,6 +51,7 @@ $(function() {
             }
         })
     })
+
 
     
 

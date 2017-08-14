@@ -10,6 +10,7 @@ use App\Skola;
 use App\Rating;
 use App\Comment;
 use App\TypySkol;
+use App\Background;
 use Input;
 
 class SchoolsController extends Controller
@@ -17,9 +18,9 @@ class SchoolsController extends Controller
 
     public function index()
     {
+
         $input = Input::all();
         if(!empty($input['_token']) ) {
-
             $schools = Skola::getSchoolsFilter($input)->paginate(15);
         } else {
             $schools = Skola::paginate(15);
@@ -42,7 +43,7 @@ class SchoolsController extends Controller
     public function show($skolaUrl)
     {
 
-        $skola = Skola::where('url', $skolaUrl)->first();
+        $skola = Skola::where('url', $skolaUrl)->firstOrFail();
        //dd($skola->adresy[1]->typJmeno());
        //dd(Rating::userRating($skola->id));
 
@@ -53,7 +54,8 @@ class SchoolsController extends Controller
             'rating' => Rating::schoolRating($skola->id),
             'comments' => Comment::schoolComments($skola->id),
             'breadCumbersTarget' => 'school',
-            'breadCumbersTargetParams' => $skola
+            'breadCumbersTargetParams' => $skola,
+            'background' => Background::getPattern()
         ]);
     }
 

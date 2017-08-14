@@ -13,3 +13,10 @@
     border-color: nth($colors-grades, $i+1) !important;
   }
 }
+
+@media only screen and (max-device-width: 768px)
+{
+  .mobile-no-padding {
+    padding: 0;
+  }
+}

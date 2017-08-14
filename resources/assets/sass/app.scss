@@ -32,6 +32,9 @@ $family-primary: $font-family;
 @import "components/main-content";
 @import "components/comments";
 @import "components/filters";
+@import "components/search";
+@import "components/alert";
+@import "components/search-bar";
 
 //helper classes
 @import "helpers/classes";

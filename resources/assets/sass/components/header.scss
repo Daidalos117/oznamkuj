@@ -11,7 +11,13 @@ header {
   .header-logo {
     font-size: $font-size-3;
     font-weight: 500;
-    p{margin: 0}
+
+    p{margin: 0;
+      color:  $accent-color;
+    }
+  }
+  .header-logo-img {
+    width: 12rem;
   }
 
   .header-right {
@@ -25,10 +31,33 @@ header {
     }
   }
 
-  .menu {
-    li {
-      display: inline-block;
-      margin-left: 1rem;
+  .toggle-search-link {
+    position: relative;
+    top: .4rem;
+    left: -.4rem;
+    &:hover {
+      color: $primary-color-dark;
     }
   }
+
+  .menu {
+    @media only screen and (max-device-width: 768px)
+    {
+      padding: 0;
+    }
+    li {
+      display: inline-block;
+      float: left;
+      margin-left: 1.5rem;
+      @media only screen and (max-device-width: 768px)
+      {
+        margin-left: .5rem;
+      }
+    }
+    .btn {
+      font-size: 1.3rem;
+    }
+  }
+
+
 }

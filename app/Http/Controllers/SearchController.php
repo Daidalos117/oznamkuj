@@ -15,7 +15,8 @@ class SearchController extends Controller
         //dd($input);
         $schools = Skola::search($input["dotaz"])->paginate(15);
         //dd($schools);
-        
-        return view("search.index", ["schools" => $schools, 'query' => $input["dotaz"]]);
+        $schoolController = new SchoolsController();
+        return view("search.index", ["schools" => $schools, 'query' => $input["dotaz"],
+            'filters' => $schoolController->getFilters()]);
     }
 }

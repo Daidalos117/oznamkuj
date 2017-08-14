@@ -1,4 +1,4 @@
-console.log('selectpicker');
+
 $(function() {
 
     $('.selectpicker').selectpicker({

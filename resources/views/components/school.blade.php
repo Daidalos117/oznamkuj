@@ -11,7 +11,7 @@
                 </h3>
                 <address class="text-muted school-address add-info">
                     <i class="fa icon fa-map-marker" aria-hidden="true"></i>
-                    <!-- is streed filled ? -->
+                    <!-- is street filled ? -->
                     @if($school->adresy[0]->ulice)
                         {{$school->adresy[0]->ulice}},  {{$school->adresy[0]->cislo_popisne}}
                          @if($school->adresy[0]->cislo_orientacni)/ {{$school->adresy[0]->cislo_orientacni}}@endif
@@ -26,9 +26,11 @@
                     <i class="fa icon fa-graduation-cap" aria-hidden="true"></i>
                     @foreach ($school->getTypesNames() as $type){{ $loop->first ? '' : ', ' }}{{ $type }}@endforeach
                 </p>
-                <a href="skoly/{{ $school->getUrl() }}" class="pull-right">
-                    <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Více
-                </a>
+                <div class="text-right">
+                    <a href="skoly/{{ $school->getUrl() }}" class="">
+                        <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Více
+                    </a>
+                </div>
             </div>
             <div class="col-md-3 text-right">
                 <div class="rating-score">

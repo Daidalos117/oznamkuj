@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Sidebar;
+use Illuminate\Http\Request;
+
 class RegisterController extends Controller
 {
     /*
@@ -71,8 +73,7 @@ class RegisterController extends Controller
         
         if ($validator->fails())
         {
-            Alert::setType(Alert::TYPE_ERROR);
-            Alert::setText("Opravte prosím problémová pole");
+
 
             //Session::flash('success', 'Gruppe ' . Input::get('display_name') . ' wurde erfolgreich bearbeitet');
             $this->alert = array(
@@ -93,15 +94,31 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        Alert::setType(Alert::TYPE_SUCCES);
-        Alert::setTitle("Registrace proběhla úspěšně.");
-        Alert::setText("Můžete se přihlásit.");
-        
+
+
         return User::create([
             'name' => $data['name'],
             'surname' => $data['surname'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+    /**
+     * The user has been registered.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  mixed  $user
+     * @return \Illuminate\Http\Response
+     */
+    protected function registered(Request $request, $user)
+    {
+        $alert =   [
+            'type' => 'success',
+            'title' => 'Registrováno!',
+            'text' => 'Můžete se přihlásit.'
+        ];
+
+        return redirect("/registrace")->with('alert', $alert);
     }
 }
