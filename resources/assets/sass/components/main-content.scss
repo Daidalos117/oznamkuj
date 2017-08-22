@@ -31,8 +31,8 @@
     &.pattern {
         height: 40%;
     }
-    -webkit-filter: brightness(.8);
-    filter: brightness(.8);
+    //-webkit-filter: brightness(.8);
+    //filter: brightness(.8);
     &:after {
       //  @include after;
         height: 100%;

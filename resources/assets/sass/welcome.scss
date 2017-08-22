@@ -23,8 +23,8 @@
     z-index: 2;
     &:before {
       @include after;
-      width: 110%;
-      left: -5%;
+      width: 108%;
+      left: -4%;
       height: 130%;
       top: -15%;
       @include shadow-1;
@@ -37,7 +37,12 @@
     //color: white;
     font-size: 5.5rem;
     z-index: 1;
-    margin: 0;
+    .bg {
+      background: rgba($accent-color, .6);
+      color: white;
+      padding: .5rem 1rem;
+    }
+
     @media only screen and (max-device-width: 768px)
     {
       font-size: 5rem;
@@ -49,7 +54,7 @@
     width: 100%;
     font-weight: 500;
     position: relative;
-
+    margin-bottom: 2rem;
   }
 
   &-search {
