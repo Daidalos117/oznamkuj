@@ -1,7 +1,7 @@
 
 ## O oznámkuj
 
-Oznámkuj je webová aplikace napsaná jako ukázka využití webového frameworku Laravel pro možnosti webového vývoje pro moji absolventskou práci. 
+Oznámkuj je webová aplikace napsaná jako ukázka využití webového frameworku Laravel při vývoje praktické práce související s mojí diplomovou prací.
 
 Postaveno na
 * [Bootstrap](https://www.getbootstrap.com "Bootstrap")
