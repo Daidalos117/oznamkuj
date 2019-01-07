@@ -5,7 +5,7 @@
     <div class="welcome-container">
        {{-- <img src="{{asset('storage/img/graduate.jpg')}}" class="welcome-image">--}}
         <div class="welcome-background" style="background: url({{asset('storage/pattern/memphis-colorful.png')}})"></div>
-        <div class="welcome container-fluid col-lg-8 col-md-8 col-xs-12">
+        <div class="welcome container-fluid col-lg-8 col-md-8 col xs-12">
             <h1 class="welcome-header col-lg-offset-1"><span class="bg">Oznámkuj</span> školu!</h1>
             <div class="welcome-text-content col-md-10 col-lg-offset-1">
             <p class="welcome-paragraph">A předej tak cenou zpětnou vazbu nejen své škole, ale i případným zájemcům o studium :)</p>
@@ -20,6 +20,8 @@
                 </div>
                 <div class="welcome-links">
                     <a href="{{url('/skoly')}}" class="welcome-allSchools">Všechny školy ({{$schoolsCount}})</a>
+                    |
+                    <a href="{{url('/jak-znamkujeme')}}" class="welcome-allSchools">Jak funguje známkování?</a>
                 </div>
             </div>
         </div>

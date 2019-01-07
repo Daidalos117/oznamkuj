@@ -13,6 +13,7 @@
             @endforeach
             </select>
         @endif
+            @if(!empty($_GET['dotaz'])) <input type="hidden" name="dotaz" value="{{ $_GET['dotaz'] }}">@endif
             <input type="submit" class="btn btn-primary" value="Filtrovat">
         </form>
     </div>

@@ -141,14 +141,7 @@
         </div>
 
         <input type="hidden" class="js-school-id" value="{{$skola->id}}"/>
-
-
-            
-            
-
         
-        
-
         <div class="col-md-8">
             <hr />
             <h3>Přidej komentář</h3>

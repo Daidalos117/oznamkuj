@@ -19,6 +19,9 @@ Auth::routes();
 Route::get('/domov', 'HomeController@index');
 
 
+Route::get('/jak-znamkujeme', 'HWGradeController@index');
+
+
 /** Schools */
 Route::get('/skoly', 'SchoolsController@index');
 Route::get('/skoly/{skola}', 'SchoolsController@show');
@@ -40,7 +43,7 @@ Route::get('/odhlaseni',  'Auth\LoginController@logout');
 
 /**
  * Artasian komandy
- */
+* */
 // Vymazat cache fasády
 Route::get('/clear-cache', function() {
     Artisan::call('cache:clear');
